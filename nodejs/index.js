@@ -9,6 +9,10 @@ io.on('connection', function(socket){
     console.log('message: ' + msg);
     io.emit('changed', msg);
   });
+  socket.on('drawn', function(x,y){
+      io.emit('drawn',x,y);
+      //console.log("drawn",x,y);
+  });
 });
 
 http.listen(3000, function(){
